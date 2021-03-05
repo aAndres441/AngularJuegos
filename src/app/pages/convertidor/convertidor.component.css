@@ -1,0 +1,22 @@
+/* h5 {
+    color: cornsilk;
+    padding-top: 10px;
+    font-size: x-large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+} */
+.badge {
+    font-size: 150%;
+    margin: 2px;
+    background-color: darkgoldenrod;
+}
+
+/* #exampleColorInput {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+#exampleColorDiv {
+    display: flex;
+    justify-content:flex-end;
+    /* align-items:flex-end; */
+}

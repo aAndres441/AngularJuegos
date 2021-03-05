@@ -1,0 +1,20 @@
+.container {
+    background: #B79891;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #94716B, #B79891);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #94716B, #B79891); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    border: 2px solid salmon;
+}
+
+.tituloClass {
+    font-family: 'Nerko One', cursive;
+    color: #697508;
+    font-weight: 600;
+    font-size: 2.2rem;
+    
+}
+
+h1 {
+    color: salmon;
+}
+

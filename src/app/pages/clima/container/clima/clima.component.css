@@ -1,0 +1,20 @@
+.body {
+    background:url('D:\ORT\AYUDANTIAS\Lenguaje_Angular\AngularUdemy\Juegos\Juegos\src\assets\imagenes\climaFondo.jpg');
+    background-size: cover;
+    opacity: 50%;
+    background-repeat: no-repeat;
+    background-position: right;
+    height: 40vh; 
+}
+
+.body2{
+    background: #2193b0;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #6dd5ed, #2193b0);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+/* background: url('D:\ORT\AYUDANTIAS\Lenguaje_Angular\AngularUdemy\Juegos\Juegos\src\assets\imagenes\books.jpg'); 
+    /* background-position: right; */
+   
+   /*  height: 50vh; */

@@ -1,0 +1,14 @@
+<div class="container pt-3">
+    <div class="text-center tituloClass">
+        AGENDA
+    </div>
+    <div class="row" mt-3>
+        <div class="col-lg-6">
+            <app-crear-citas (nuevaCitaOut)="addCita($event)"></app-crear-citas>
+        </div>
+        <div class="col-lg-6">
+            <app-list-citas [listaCitasInput] = "listCitas"
+                        (deleteCitaOut)="delete($event)"></app-list-citas>
+        </div>
+    </div>
+</div>

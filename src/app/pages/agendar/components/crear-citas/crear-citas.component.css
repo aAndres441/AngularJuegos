@@ -1,0 +1,16 @@
+label  {
+    font-weight: 60;
+}
+h5{
+    font-family: 'Nerko One', cursive;
+}
+
+button:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+    background-color: rebeccapurple;
+  }
+
+  .card {
+    margin: 10px 40px;
+}

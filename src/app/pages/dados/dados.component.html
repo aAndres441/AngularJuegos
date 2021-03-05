@@ -1,0 +1,76 @@
+<div class="container">
+    <div class="col-md-6">
+        <h1 style="text-align: center;">{{title}}</h1>
+    </div>
+    
+    <div class="jumbotron text-center" >
+       
+        <button [ngClass]="numeroUno === numeroDos ? 'btn btn-danger btn-lg' : 'btn btn-outline-warning btn-lg'"
+            (click)="tirarDados()"
+            style="color: rgb(236, 233, 53);">
+            Tirar dados
+        </button>
+        <!-- 
+            class="btn btn-outline-success" -->
+    </div>
+    <br>
+    
+    <div class="dados">
+        <img class="img" [src]="dadoIzquierda" >
+        <img class="img" [src]="dadoDerecha" >
+        <!-- <h2 *ngIf="numeroUno === numeroDos">
+                {{texto}} 
+        </h2> -->
+       <!--  <h2 [ngStyle]="{backgroundColor: getColor()}">
+            {{texto}}
+        </h2> -->
+    </div>
+    
+    <hr>
+    
+<h1 *ngIf="numeroUno !== numeroDos; else parrafoOculto" 
+    style="background-color: rgb(255, 255, 255);"
+    >Vuelve a jugar    
+</h1>
+ 
+<!-- <ng-template> -->
+
+<ng-template #parrafoOculto>
+    <h3 style="background-color: gold;">
+        Acerto !!!
+    </h3>
+</ng-template>
+
+    <!-- <p [ngStyle]="{backgroundColor: getColor()}">  
+        {{texto}} --> 
+       <!--  <h3 *ngIf="numeroUno === numeroDos">
+            IGUALITO
+        </h3>
+        
+        <h3 *ngIf="numeroUno !== numeroDos; else parrafoOculto" 
+        >ta le erro
+        </h3> -->
+        <!-- 
+     </p> -->
+
+     <hr>
+
+     <!-- <input type="text" placeholder="ingrese Two way Data-Binding"
+            [(ngModel)]= "miTexto">
+        <h4> Cambiara: <span style="color: rgb(157, 243, 157);">
+            {{miTexto}}
+            </span>
+        </h4> -->
+
+            <br>
+
+            <!-- <div [ngStyle]="{backgroundColor: numeroUno === numeroDos ? 'green' : 'violet'}></div> -->
+
+            <!-- <div [ngStyle] = "{'backgrounColor': numeroUno === numeroDos ? #mismo : #diferente}"></div> -->
+
+<!-- <div class="mismo" name="mismo" style="background-color: red; color: aliceblue;"></div>
+<div class="diferente" name="diferente" style="background-color: aliceblue; color: cyan;"></div> -->
+
+
+  
+</div>

@@ -1,0 +1,80 @@
+.fondoItem {
+    background-color: #11ffc488;
+    height: 130px;
+    border-radius: 20px;
+    margin: 2px;
+    color: ivory;
+}
+
+.sexo {
+    font-size: 40px;
+}
+.sexoSeleccion {
+    background-color: khaki;
+}
+
+.sumaResta {
+    cursor: pointer;
+    color: khaki;
+    /* background-color: rgb(255, 255, 255); */
+    padding: 4px;
+    border-radius: 15px;
+    margin-left: 3px;
+    font-size: 40px;
+}
+
+.estiloNumero {
+    font-size: 32px;
+    font-weight: 800;
+    margin-top: -30px;
+}
+
+.cm {
+    font-size: 16px;
+    font-weight: 400;    
+    margin-left: -5px;
+}
+
+.form-range::-webkit-slider-thumb {
+    padding: 0px 20px;
+}
+
+.form-range::-webkit-slider-thumb {
+    background: khaki;
+  }
+
+.list-group-item:active {
+    /* opacity: 0.7; */
+    box-shadow: 0 4px 17px rgba(244, 245, 173, 0.35);
+   }
+
+   .circle-link {
+    height: 40px;
+    width: 40px;
+    border-radius: 40px;
+    margin: 8px;
+    background-color: white;
+    border: 1px solid #eeeeee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: 1s ease-out;
+  }
+
+  .circle-link:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  }
+/* .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+} */
+
+/* height: 100vh ocuparia 100% de la pantalla */
+
+
+

@@ -1,0 +1,25 @@
+
+/* Fondo 1 */
+.container{    
+    background: url('D:\ORT\AYUDANTIAS\Lenguaje_Angular\AngularUdemy\Juegos\Juegos\src\assets\imagenes\books.jpg'); 
+    background-size: cover;
+    opacity: 80%;
+    background-repeat: no-repeat;
+
+    /* background-position: right; */
+   /*  height: 50vh; */
+}
+
+/* Fondo 2 */
+/* .container{
+    background: #1E9600; 
+    background: -webkit-linear-gradient(to right, #FF0000, #FFF200, #1E9600);  
+    background: linear-gradient(to right, #FF0000, #FFF200, #1E9600); 
+} */
+
+.tituloClass {
+    font-family: 'Nerko One', cursive;
+    color: #697508;
+    font-weight: 600;
+    font-size: 2.2rem;
+}

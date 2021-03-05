@@ -1,0 +1,113 @@
+
+<div class="row" style="color: whitesmoke; text-align: center;">
+    <div class="col-lg-10">
+        <h1 >
+            {{title}}
+            <i class="fa fa-money fa-spin" style="color: whitesmoke;"></i>
+        </h1>
+    </div>
+    <div class="col-lg-2">
+        <h4>
+            {{ fechaDeHoy | date:'shortDate'}}
+        </h4>
+    </div>
+</div>
+
+<div class="container" p-3>
+   <div class="row">
+       <div class="col-lg-12">
+        <div class="form-group">
+            <label for="amount" class="form-label text-danger form-control-lg">
+                AMOUNT
+            </label>
+            <input type="number" 
+                [(ngModel)]="quantity"
+                class="form-control form-control-lg" 
+                id="amount" 
+                placeholder="Input amount"
+                (input)="convertir()">
+                 <!-- (keyUp.enter)="", cada vez que apreta enter llama metodo
+                     (input)="", cada vez que ingresa llama al metodo -->
+          </div>
+   
+       </div>
+       <div class="col-lg-6">
+        <div class="form-group">
+            <label for="tengo" class="form-label text-danger form-control-lg" >Tengo</label>
+            <select class="form-select" 
+                    aria-label="Disabled select example" 
+                    id="tengo"
+                    [(ngModel)]="have"
+                    (change)="convertir()">
+                <option selected disabled>Open this select menu</option>
+                <option                     
+                    *ngFor="let moneda of tipoMonedas"
+                    [value]="moneda">
+                    {{moneda}}
+                </option>
+            </select>
+        </div>        
+       </div>
+       
+       <div class="col-lg-6">
+        <label for="quiero" class="form-label text-danger form-control-lg">WANT</label>
+        <select class="form-select" 
+                aria-label="Disabled select example" 
+                id="quiero" name="quiero" #quiero
+                [(ngModel)]="want"
+                (change)="convertir()">
+            <option value="" disabled selected >Open this select menu...</option>
+            <option *ngFor="let moneda of tipoMonedas"
+                    [value]="moneda">
+                    {{moneda}}
+            </option>
+        </select>
+       </div>
+   </div>
+   <h5 class="text-center mt-3" *ngIf="quantity>0">
+       <span class="badge badge-success">
+        {{quantity}}{{have}}
+       </span>
+       <span class="badge badge-success">
+        <i class="fa fa-exchange" aria-hidden="true"></i>
+       </span>
+      <!--  <span class="badge badge-secondary">  
+           <button 
+            (click)="convertir({{quantity}},{{have}},{{want}})">
+            <i class="fa fa-exchange" aria-hidden="true"></i>
+            </button>
+       </span> -->
+       <span class="badge badge-success">
+        {{total | number: '0.0-2'}} {{want}}
+       </span>
+       
+   </h5>
+</div>
+
+<div id="exampleColorDiv">
+    <label for="exampleColorInput" class="form-label text-danger">Color picker</label>
+    <input type="color" 
+        class="form-control form-control-color" 
+        id="exampleColorInput" 
+        value="#00FF10" 
+        title="Choose your color">
+  </div>
+
+
+<!-- <select ng-model="selectedName" name="selectedName" #selectedName>
+    <option value="" disabled selected>Seleccione una comida...</option>
+    <option value="x" *ngFor="let x of tipoMonedas; 
+                         let i = index ">
+        {{x}}
+    </option>
+</select>
+<hr>
+<div class="form-group">
+    <label for="">select status</label>
+    <select class="form-control" name="status" id="status">
+        <option *ngFor="let status of tipoMonedas" [value]="want">{{want}}
+        </option>
+    </select>
+</div> -->
+                   
+         

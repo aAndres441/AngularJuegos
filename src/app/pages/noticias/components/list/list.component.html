@@ -1,0 +1,30 @@
+
+<ng-template #infoText>
+    <div class="alert alert-warning text-center" role="alert">
+        <h4 style="background-color: rgb(255, 0, 0); 
+        color:rgb(255, 255, 255); 
+        text-align: center">
+            A simple warning alert—check it out!
+            {{aviso}}
+        </h4>
+    </div>
+</ng-template>
+<!--  row-cols-2 row-cols-md-2 g-4 -->
+
+<div class="row" *ngIf="error; else infoText">
+    <div class="col-lg-6 offset-lg-3">
+      <div class="card" *ngFor="let not of listado">
+        <img [src]="not.urlToImage" class="card-img-top" alt="...">
+        <div class="card-body">
+            <span class="badge bg-primary mb-1">
+                {{not.source.name}}
+            </span>
+            <h5 class="card-title">
+                {{not.title}}
+            </h5>
+          <p class="card-text">{{not.description}}</p>
+          <a [href]="not.url" class="btn btn-primary btn-block" target="blank">View new</a>
+        </div>
+      </div>
+    </div>   
+</div>

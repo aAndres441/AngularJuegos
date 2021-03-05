@@ -1,0 +1,112 @@
+
+
+<div class="row">
+    <div class="col-lg-4 offset-lg-4">
+        <h1 class="myTitulo">
+            {{title}}
+        </h1>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="fondoItem" [ngClass]="{'sexoSeleccion': sexo==='Masculino'}">
+                    <div class="myContenedorParaCentrar"
+                        (click)="sexoSelect('M')">
+                        <i class="fa fa-mars sexo" aria-hidden="true"></i>
+                        <p>Masculino</p>
+                    </div>                    
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="fondoItem" [ngClass]="{'sexoSeleccion': sexo==='Femenino'}">
+                    <div class="myContenedorParaCentrar"
+                        (click)="sexoSelect('F')">
+                        <i class="fa fa-venus sexo" aria-hidden="true"></i>
+                        <p>Femenino</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="fondoItem">
+                    <div class="myContenedorParaCentrar">
+                        <p>Altura</p>
+                        <div class="estiloNumero">
+                            {{altura}}
+                            <span class="cm">cm</span>
+                        </div>        
+                        
+                            <input type="range"
+                                class="form-range"
+                                min="1" max="220"
+                                [value]="altura" 
+                                (input)="cambiarAltura($event)">                                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="fondoItem">
+                    <div class="myContenedorParaCentrar">
+                        <p>Peso</p>
+                        <div class="estiloNumero">
+                            {{peso}}
+                            <span class="cm">Kg</span>
+                        </div>  
+                        <div>
+                            <i class="fa fa-minus sumaResta" aria-hidden="true"
+                                (click)="peso=peso-1"></i>
+                            <i class="fa fa-plus sumaResta" aria-hidden="true"
+                            (click)="peso=peso+1"></i>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="fondoItem">
+                    <div class="myContenedorParaCentrar">
+                        <p>Edad</p>
+                        <div class="estiloNumero">
+                            {{edad}}
+                            <span class="cm">años</span>
+                        </div>  
+                        <div>
+                            <i class="fa fa-minus sumaResta" aria-hidden="true"
+                            (click)="edad=edad-1"
+                            (click)="ver(edad)"></i>
+                            <i class="fa fa-plus sumaResta" aria-hidden="true"
+                            (click)="edad=edad+1"
+                            (click)="ver(edad)"></i>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <button 
+                    (click)="calcularBMI()"
+                    class="
+                    btn-lg
+                    myBbtn-color 
+                    btn btn-outline-secondary">
+                    CALCULAR
+                </button> <!-- routerLink="/dados" -->
+            </div>()
+        </div>
+        <div  style="border: #d34300 2px double;">       
+    
+           <!--  <router-outlet></router-outlet>
+                    
+            <app-resultado></app-resultado> -->
+            <h4>
+                LALAL
+            </h4>
+    
+        </div>
+
+    </div>
+    
+</div>
+
+

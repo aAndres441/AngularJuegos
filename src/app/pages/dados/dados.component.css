@@ -1,0 +1,17 @@
+.container{
+ background-color: cornflowerblue;
+}
+
+.img{
+    width:  30%;
+    height:  30%;
+    margin: 30px;
+    background-color: crimson;
+    border-radius: 20px;
+}
+
+.dados{
+    display: flexbox;
+    width: auto;
+    border-color: solid 2px whitesmoke;
+}

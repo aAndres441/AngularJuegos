@@ -1,0 +1,53 @@
+<div class="container pt-4">
+    <div class="row">
+        <div class="col-lg-6">
+            <img [src]="urlImagen" alt="imgClima" width="300px" height="300px">
+        </div>
+        <div class="col-lg-6">
+            <!-- ERROR -->
+            <div class="alert alert-dismissible alert-danger" *ngIf="error">
+                <div class="text-center">
+                    <strong>
+                        <font style="vertical-align: baseline;"> ¡Error in having the weather! </font>
+                    </strong>
+                </div>
+            </div>
+
+            <input type="text" [(ngModel)]="ciudad"
+                class="form-control form-control-lg mySize" 
+                placeholder="Enter city">
+            <button class="btn btn-primary btn-block btn-lg mt-2 mySize" 
+                [disabled]="ciudad===''"
+                (click)="getClima()">
+                Get weather
+            </button>
+            <!-- hilanderos spinners boootstrap -->
+            <div class="text-center mt-3" *ngIf="loading">
+                <div class="spinner-border text-warning" role="status"></div>
+                <div class="spinner-border text-light" role="status"></div>
+                <div class="spinner-border text-success" role="status"></div>
+            </div>
+            <div class="card">
+                <div class = "progreso">
+                 
+                  <div class = "progreso">
+                    <div class = "barra de progreso barra de progreso con rayas bg-info" role = "barra de progreso" style = "ancho: 50%;" aria-valuenow = "50" aria-valuemin = "0" aria-valuemax = "100"> </div>
+                  </div>
+                  
+            </div>
+            <div class="card mt-3">
+                <div class="card body">
+                     <p><b>Temperature: </b>{{temp}}</p>
+                    <p><b>Humidity: </b> {{humidity}}</p>
+                    <p><b>Climate: </b> {{clima}} </p> 
+
+                    <p><b>Temperature: </b> {{resTemp}}</p>
+                    <p><b>Humidity: </b> {{resHumedad}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <input type="text" placeholder="ciudad" >
+    </div>
+</div>

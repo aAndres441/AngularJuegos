@@ -1,0 +1,27 @@
+.fondoItem {
+    background-color: #11ffc488;
+    height: 430px;
+    border-radius: 20px;
+    margin: 2px;
+    color: ivory;
+}
+
+.resultado {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: chartreuse;
+}
+.numero {
+    font-size: 80px;
+    font-weight: 700;
+    color: chartreuse;
+    padding-top: 25px;
+    padding-bottom: 45px;
+}
+.iterpretacion {
+    font-size: 28px;
+    margin: 10px;
+    text-align: left;
+    color: chartreuse;
+}

@@ -1,0 +1,50 @@
+<div class="container mt-3">
+
+  <div class="col-lg-10 offset-lg-1" style="background-color: aliceblue; padding: 1rem;">
+    <app-count [cAll]="countEmployeed()" [cFem]="countFem()" [cMasc]="countMasc()"
+      (radioChangeOut)="employeedChange($event)">
+    </app-count>
+  </div>
+
+  <div class="card  mt-3">
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-responsive align-middle table-dark table-striped  ">
+          <thead>
+            <tr>
+              <th>Legajo</th>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>Sexo</th>
+              <th>Salario</th>
+              <th>ADD</th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container *ngFor=" let e of listEmplead">
+              <tr *ngIf="radioSeleccionado === 'Todos' || radioSeleccionado === e.sexo">
+                <td>{{e.legajo}}</td>
+                <td>{{e.nombre}}</td>
+                <td>{{e.apellido}}</td>
+                <td>{{e.sexo}}</td>
+                <td>{{e.salario | currency}}</td>
+                <td><button class="btn btn-succes" style="color: rgb(113, 227, 255);" 
+                    (click)="addEmployed(e)">
+                    Add
+                  </button>
+                </td>
+              </tr>
+            </ng-container>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!--  <div class="col-lg-2">
+        <h4>
+            {{ fechaDeHoy | date:'shortDate'}}
+        </h4>
+    </div> -->

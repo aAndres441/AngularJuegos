@@ -1,0 +1,66 @@
+<!-- <nav class="navbar navbar-dark bg-dark">
+    <div class="navbar-brand mb-0 h1">
+        NAVBAR
+    </div>
+  </nav> -->
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" style="color: aliceblue;">{{unTitulo}}</a>
+      <button class="navbar-toggler" 
+        type="button" 
+        data-bs-toggle="collapse" 
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a routerLink="/home" class="active"><i class="fa fa-home" style="color:rgb(77, 145, 233); font-size: 20px"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="/dashboard"><i class="fa fa-columns" style="color:rgb(241, 32, 84); font-size: 20px"></i></a>
+                </li>   
+        
+                <li class="nav-item">
+                    <a routerLink="/convertidor"><i class="fa fa-money" style="color:rgb(12, 238, 163); font-size: 20px"></i></a>
+                </li>   
+        
+            <!--  <li>
+                    <hr class="dropdown-divider">
+                </li>
+    -->
+                <li role="presentation" routerLinkActive="active"><a routerLink="/dados"><i class="fa fa-rebel"
+                            style="color:rgb(154, 26, 204); font-size: 20px"></i></a> </li>
+                <li role="presentation" routerLinkActive="active"><a routerLink="/piano"><i class="fa fa-rss"
+                            style="color:rgb(49, 241, 32); font-size: 20px"></i></a> </li>
+                <li role="presentation" routerLinkActive="active"><a routerLink="/tareas"><i class="fa fa-tasks"
+                            style="color:rgb(255, 251, 15); font-size: 20px"></i></a> </li>
+                <li role="presentation" routerLinkActive="active"><a routerLink="/BMI"><i class="fa fa-balance-scale"
+                            style="color:rgb(131, 255, 15); font-size: 20px"></i></a> </li>
+                <li role="presentation" routerLinkActive="active"><a routerLink="/agenda"><i class="fa fa-sticky-note"
+                            style="color:rgb(255, 191, 15); font-size: 20px"></i></a> </li>
+                <li role="presentation" routerLinkActive="active"><a routerLink="/empleados"><i class="fa fa-users"
+                            style="color:rgb(15, 91, 255); font-size: 20px"></i></a> </li>                
+                <li role="presentation" routerLinkActive="active"><a routerLink="/presupuesto"><i class="fa fa-line-chart"
+                            style="color:rgb(255, 15, 195); font-size: 20px"></i></a> </li>
+               <!--  <li role="presentation" routerLinkActive="active"><a routerLink="/gastos"><i class="fa fa-credit-card"
+                            style="color:rgb(185, 13, 185); font-size: 20px"></i></a> </li> -->
+                <li role="presentation" routerLinkActive="active"><a routerLink="/clima"><i class="fa fa-sun-o"
+                            style="color:rgb(122, 247, 226); font-size: 20px"></i></a> </li>
+                <li role="presentation" routerLinkActive="active"><a routerLink="/bitly"><i class="fa fa-exchange"
+                            style="color:rgb(247, 168, 122); font-size: 20px"></i></a> </li>
+                <li role="presentation" routerLinkActive="active"><a routerLink="/news"><i class="fa fa-newspaper-o"
+                            style="color:rgb(245, 243, 241); font-size: 20px"></i></a> </li>
+                <li role="presentation" routerLinkActive="active"><a routerLink="/pixabay"><i class="fa fa-picture-o"
+                            style="color:rgb(190, 233, 156); font-size: 20px"></i></a> </li>
+                
+            </ul>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+  </nav>
+  

@@ -1,0 +1,26 @@
+<div class="container pt-3">
+    <div class="tituloClass">
+        <h1 style="color: cornsilk;font-family: 'Oi', cursiva;">
+            {{title}}
+        </h1>
+    </div>
+
+    <div class="card-mt-2">
+        <app-nav [unTitulo]="'NEWS FINDER'"></app-nav>
+    </div>
+    
+    <div class="micontainer">
+        <app-form (parametroSeleccionado)= "buscarNoticias($event)" ></app-form>
+
+        <div class="card-body" *ngIf="isLoad">
+            <app-spinner></app-spinner>
+        </div>
+    
+        <app-list [listado]="listNoticias"></app-list>
+    </div>
+
+    <!-- <div class="alert alert-info" role="alert" *ngIf="listNoticias.length<2">
+        {{errorText}}
+    </div> -->
+    
+</div>

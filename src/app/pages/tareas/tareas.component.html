@@ -1,0 +1,47 @@
+<h1 style="color: whitesmoke; text-align: center;">
+    {{title}}
+    <i class="fa fa-spinner fa-spin" style="color: whitesmoke;"></i>as bullets
+</h1>
+<p style="text-align: center;">Add whith key  enter/p>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-8 sm-8 offset-lg-2">
+            <input type="text" 
+               (keyup.enter)="agregarTarea()"
+               [(ngModel)]="nombreTarea"
+                class="form-control form-control-lg"
+                placeholder="ADD TAsk"
+                >
+        </div>
+        
+        <div class="col lg-6 offset-lg-3 mt-3">
+            <div class="card mt-3 p-2"
+                *ngIf="listaTareas.length===0">
+                <h5>No hay tareas</h5>
+            </div>
+            <ul class="list-group">
+                
+                <li *ngFor="let t of listaTareas; let i=index"
+                    class="list-group-item d-flex justify-content-between">                   
+                    <span class="cursor text-secondary" (click)="update(t,i)">
+                        <i [ngClass]="t.state ? 'fa fa-check-circle-o' : 'fa fa-circle-thin'"
+                            [class.text-success]="t.state">
+                        </i>
+                    </span>
+                    {{t.nombre}}  (  {{i +1}} )
+                    <span class="cursor text-danger" (click)="delete(i)">
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                    </span>
+                </li>
+            </ul>
+        </div>
+       <!--  <div class="ej_icons">
+            <div class="list-group">
+                <a class="list-group-item" href="#"><i class="fa fa-home fa-fw" aria-hidden="true"></i>&nbsp; Home</a>
+                <a class="list-group-item" href="#"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp; Library</a>
+                <a class="list-group-item" href="#"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i>&nbsp; Applications</a>
+                <a class="list-group-item" href="#"><i class="fa fa-cog fa-fw" aria-hidden="true"></i>&nbsp; Settings</a>
+              </div>
+        </div> -->
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="card" style="align-items: center;">
+    <div class="car-body">
+
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" 
+          type="radio" name="sexo" id="todos" value="Todos"
+          [(ngModel)]="radioSelect"
+          (change)="this.radioEmiteChange()">
+        <label class="form-check-label" for="todos">Total {{cAll}}</label>
+      </div>
+
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" 
+          type="radio" name="sexo" id="femenino" value="Femenino"
+          [(ngModel)]="radioSelect"
+          (change)="this.radioEmiteChange()">
+        <label class="form-check-label" for="femenino">Femenino{{cFem}}</label>
+      </div>
+
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" 
+          type="radio" name="sexo" id="masculino" value="Masculino"
+          [(ngModel)]="radioSelect"
+          (change)="this.radioEmiteChange()">
+        <label class="form-check-label" for="masculino">Masculino{{cMasc}}</label>
+      </div>
+
+    </div>
+  </div>

@@ -1,0 +1,17 @@
+p{
+    margin: 0px;;
+}
+.card-footer{
+padding: 0px;
+}
+.col-datos{
+    text-align: left;
+    align-content: flex-start;
+    color: red;
+    padding: 0px;
+}
+
+a{
+    font-weight: bold;/* 400 */
+    color: rgb(202, 159, 233);
+}
