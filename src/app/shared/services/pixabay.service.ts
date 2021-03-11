@@ -32,15 +32,19 @@ export class PixabayService {
     return this.datoBusqueda$.asObservable();
   }
 
-  getImages(termino:string): Observable<any>{
+  getImages(termino:string, pagActual: number, cantHitsPerPage: number): Observable<any>{
+    console.log('pagActual', pagActual);
+    
     const URL = this.urlImagenes
                 +'?key='
                 +this.privateclaveAPI
                 +'&q='
                 +termino 
                 +'&image_type=photo'
-                +'$per_page='+30
-                +'&page='+3; 
+                +'$per_page='
+                +cantHitsPerPage
+                +'&page='
+                +pagActual; 
 
     const URLvideo = this.urlVideos
                 +'?key='

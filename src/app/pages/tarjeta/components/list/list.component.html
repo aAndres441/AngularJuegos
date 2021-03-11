@@ -1,0 +1,35 @@
+<div class="card">
+    <div class="card-body">
+        <h5 class="titulo" pb-2>LIST</h5>
+
+        <table class="table table-responsive table-dark table-hover">
+            <thead>
+                <tr>
+                    <th >Name</th>
+                    <th >Lastname</th>
+                    <th >Number</th>
+                    <th >Expiration</th>
+                    <th >Creation</th>
+                    <th >Update</th>
+                    <th ></th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let tr of listCards">
+                <tr>
+                    <td>{{tr.name}}</td>
+                    <td>{{tr.lastName}}</td>
+                    <td>{{tr.numTarjeta}}</td>
+                    <td>{{tr.fechaExpiracion}}</td>
+                    <td>{{tr.fechaCreacion | date}}</td>
+                    <td>{{tr.fechaActualizacion | date}}</td>                   
+                    <td>
+                            <i class="fa fa-edit text-info" (click)="edit(tr)"></i>
+                   
+                            <i class="fa fa-trash text-danger" (click)="delete(tr)"></i>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>

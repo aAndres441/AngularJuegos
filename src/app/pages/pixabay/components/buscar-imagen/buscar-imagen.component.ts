@@ -23,7 +23,11 @@ export class BuscarImagenComponent implements OnInit {
       return; //importante el return para terminar ejecucion
     }
     this._servicio.enviarDatoBusqueda(this.nombreImagen);
+    this.limpiarCampos();
   }
 
+  limpiarCampos(): void{
+    this.nombreImagen='';
+  }
 
 }

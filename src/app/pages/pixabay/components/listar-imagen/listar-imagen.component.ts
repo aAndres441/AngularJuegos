@@ -11,12 +11,15 @@ export class ListarImagenComponent implements OnInit, OnDestroy {
 
   nombreABuscar = '';
   suscripcionTermino: Subscription;
-
+  listaImages: any[] = [];
   isLoad: boolean;
 
-  listaImages: any[] = [];
+  imgPerPage: number = 30;
+  pageActual: number =1;
+  totalHits: number =0;
 
   constructor(private _servicio: PixabayService) {
+
     this.isLoad = false;  
 
     this.suscripcionTermino = this._servicio.getDatoBusqueda()
@@ -26,53 +29,82 @@ export class ListarImagenComponent implements OnInit, OnDestroy {
         this.nombreABuscar = dato
         this._servicio.setError('Exellent');
 
-        this.mostrarSpinner();
+       this.pageActual=1;
         
-        /* this.isLoad = true; */
-       /*  this._servicio.setView(true); */
-
-       /*  setTimeout(() => {
-          this.getImages();
-        }, 2000); */
+        this.mostrarSpinner();
       })
-
-    
-
   }
 
   ngOnInit(): void {
   }
+
   ngOnDestroy(): void {
     this.suscripcionTermino.unsubscribe;
   }
 
+  mostrarSpinner(): void{    
+
+    this.isLoad = true;
+    this.listaImages=[];
+
+    setTimeout(() => {
+      this.isLoad=false;
+      this.getImages();     
+    }, 2000);    
+  }
+
+
   getImages() {
-    this._servicio.getImages(this.nombreABuscar)
+    this._servicio.getImages(this.nombreABuscar, this.pageActual, this.imgPerPage)
       .subscribe((res) => {
-        /* this.isLoad = false; */
-        console.log(res);
         
         if (res.hits.length === 0) {
           this._servicio.setError('No images found');
           return; //importante el return para terminar ejecucion
         };
 
+console.log('Redondea ABAJO', Math.ceil(res.totalHits/this.imgPerPage));
+console.log('redondea ARRIBA',  Math.floor(res.totalHits/this.imgPerPage));
+
+        this.totalHits = Math.ceil(res.totalHits/this.imgPerPage);
+       
         this.listaImages = res.hits;
 
-        console.log('res--', res);
-
+        console.log('getImages--', res);
 
       }, error => {
         this._servicio.setError('View service');        
       });
   }
   
-  mostrarSpinner(): void{
-    this.isLoad=true;     
-    setTimeout(() => {
-      this.isLoad=false;
-      this.getImages();     
-    }, 2000);    
+ 
+  pagAnterior(){
+    this.pageActual--;
+    this.mostrarSpinner();
+    console.log(this.pageActual);
+  }
+
+  pagSiguiente(){
+    this.pageActual++;
+
+    this.mostrarSpinner();    
+    
+    console.log(this.pageActual);
+  }
+
+  mostarBotonPrev(): boolean{
+    let res = true;
+    if(this.pageActual===1){
+      res = false;
+    }
+    return res;
+  }
+  mostarBotonNext(): boolean{
+    let res = true;
+    if(this.pageActual===this.totalHits){
+      res = false;
+    }
+    return res;
   }
 
   

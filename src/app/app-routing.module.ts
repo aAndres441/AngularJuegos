@@ -13,6 +13,7 @@ import { PixabayComponent } from './pages/pixabay/container/pixabay/pixabay.comp
 import { GastosComponent } from './pages/presupuesto/components';
 import { PresupuestoComponent } from './pages/presupuesto/container/presupuesto/presupuesto.component';
 import { TareasComponent } from './pages/tareas/tareas.component';
+import { TarjetaCreditoComponent } from './pages/tarjeta/container/index';
 import { DashboardComponent } from './shared/dashboard/dashboard/dashboard.component';
 import { ErrorComponent } from './shared/error/error.component';
 import { HomeComponent } from './shared/home/home.component';
@@ -27,6 +28,7 @@ const myRoutes: Routes = [
   {path: 'piano', component: PianoComponent},
   {path: 'empleados', component: EmpleadosComponent},
   {path: 'agenda', component: CitasComponent},
+  {path: 'tarjeta', component: TarjetaCreditoComponent},
   {path: 'news', component: NoticiasComponent},
   {path: 'presupuesto', component: PresupuestoComponent},
   {path: 'gastos', component: GastosComponent},

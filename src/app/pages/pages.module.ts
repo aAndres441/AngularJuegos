@@ -14,6 +14,7 @@ import { ClimaModule } from './clima/clima.module';
 import { BitlyModule } from './bitly/bitly.module';
 import { NoticiasModule } from './noticias/noticias.module';
 import { PixabayModule } from './pixabay/pixabay.module';
+import { TarjetaModule } from './tarjeta/tarjeta.module';
 
 
 const COMPONENTS = [
@@ -34,7 +35,8 @@ const MODULES = [
   ClimaModule,
   BitlyModule,
   NoticiasModule,
-  PixabayModule
+  PixabayModule,
+  TarjetaModule
 ]
 
 @NgModule({
