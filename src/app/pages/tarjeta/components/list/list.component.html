@@ -1,6 +1,10 @@
 <div class="card">
     <div class="card-body">
         <h5 class="titulo" pb-2>LIST</h5>
+<table class="table table-responsive">
+    <td>Date{{todayDate| date:"MM/yy"}}</td>
+    <td>String{{todayString| date:"M/d/yy"}}</td>
+</table>
 
         <table class="table table-responsive table-dark table-hover">
             <thead>
@@ -20,8 +24,9 @@
                     <td>{{tr.lastName}}</td>
                     <td>{{tr.numTarjeta}}</td>
                     <td>{{tr.fechaExpiracion}}</td>
-                    <td>{{tr.fechaCreacion | date}}</td>
-                    <td>{{tr.fechaActualizacion | date}}</td>                   
+                    <td>{{tr.fechaCreacion }}</td>  <!-- | date:'shortTime' -->          
+                    <!-- <td>{{tr.fechaActualizacion}}</td> -->  <!-- |date:'dd/MM/yyyy' -->                 
+                    <td>{{tr.fechaActualizacion }}</td>  <
                     <td>
                             <i class="fa fa-edit text-info" (click)="edit(tr)"></i>
                    

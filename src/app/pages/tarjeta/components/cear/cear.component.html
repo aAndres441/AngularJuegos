@@ -1,6 +1,12 @@
 <div class="card">
     <div class="card-body">
-        <h5 class="titulo mb-3">CREATE</h5>
+        <h5 class="titulo mb-3">
+            CREATE
+            <div class="spinner-border"  role="status"
+                *ngIf="loading">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+        </h5>
 
         <form [formGroup]='myForm' (ngSubmit)="create()">
             <div class="form-group">
@@ -89,14 +95,29 @@
                             </i>
                         </span>
                         <input type="password" class="form-control" formControlName="cvv" name="cvv" required
-                            placeholder="0-9" maxlength="3" min="1" max="20">
+                            placeholder="0-9" maxlength="3" >
                     </div>
-                    <span class="help-block" style="color: hotpink;"
+                    <span class="help-block" style="color: hotpink;" 
                         *ngIf="!myForm.get('cvv')?.valid && myForm.get('cvv')?.touched">
-                        <!-- <span *ngIf="myForm.get('cvv')?.errors['required']">
-                        ID is required
-                        </span>  -->Between 0-9, do not initialize whith 0
+                    
+                        <span class="help-block" style="color: rgb(135, 197, 238);" 
+                            *ngIf="myForm.get('cvv')?.errors required">
+                            Between 0-9, do not initialize whith 0,  is required
+                        </span>
+                    
+                        
                     </span>
+                   
+                    <span class="help-block" style="color: rgb(52, 218, 102);" 
+                            *ngIf="myForm.get('cvv')?.errors pattern">
+                            Only numbers                    
+                        </span>
+                    <span class="help-block" style="color: rgb(207, 218, 52);" 
+                            *ngIf="myForm.get('cvv')?.errors minlength">
+                            Min lenght                    
+                        </span>
+                    
+                
                 </div>
 
             </div>

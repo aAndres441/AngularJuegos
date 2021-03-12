@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { FormComponent, CearComponent, ListComponent } from './components/index';
 import { TarjetaCreditoComponent } from './container/index';
+import { DatePipePipe } from './date-pipe.pipe';
 
 
 const CONTAINER = [
@@ -26,7 +27,8 @@ const MODULES = [
   declarations: [
     CONTAINER,
     COMPONENTS,
-    TarjetaCreditoComponent
+    TarjetaCreditoComponent,
+    DatePipePipe
   ],
 
   imports: [

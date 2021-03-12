@@ -29,3 +29,10 @@
     background-color: rgba(214, 211, 211, 0.767);
     color: darkslategray;
   }
+
+  .spinner-border{
+    height: 1.5rem;
+    width: 1.5rem;
+    float: right;
+    color: darkmagenta;
+  }

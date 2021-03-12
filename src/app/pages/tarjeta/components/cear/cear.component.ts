@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+
+import { ToastrService } from 'ngx-toastr';
+
 import { TarjetaCredito } from 'src/app/pages/models/TarjetaCredito';
+import { TarjetaService } from 'src/app/shared/services/tarjeta.service';
 
 @Component({
   selector: 'app-cear',
@@ -10,8 +14,11 @@ import { TarjetaCredito } from 'src/app/pages/models/TarjetaCredito';
 export class CearComponent implements OnInit {
 
   myForm: FormGroup;
+  loading=false;
 
-  constructor(private fb: FormBuilder) { 
+  constructor(private fb: FormBuilder,
+             private _servicio: TarjetaService,
+             private toastr: ToastrService) { 
     this.myForm = this.fb.group({});
   }
 
@@ -53,26 +60,40 @@ export class CearComponent implements OnInit {
      /*  this.myForm.disable(); */
     }
 
-    create(){ 
-      const TARJETA: TarjetaCredito = {
-        name: this.myForm.value.name,
-        lastName: this.myForm.value.lastName,
-        numTarjeta: this.myForm.value.numTarjeta,
-        fechaExpiracion: this.myForm.value.fechaExpiracion,
-        cvv: this.myForm.value.cvv,
-        fechaCreacion: new Date(),
-        fechaActualizacion: new Date(),
-        state: true,        
-      }
-
-      
-      console.log('tarjeta', TARJETA);
-      
-      confirm(this.myForm.controls.lastName.value + 'FORM ' + this.myForm.valid);
-      confirm(this.myForm.get("lastName")?.value + 'FORM ' + this.myForm.valid);
-      console.log(this.myForm);
-      
+  create() {
+    const TARJETA: TarjetaCredito = {
+      name: this.myForm.value.name,
+      lastName: this.myForm.value.lastName,
+      numTarjeta: this.myForm.value.numTarjeta,
+      fechaExpiracion: this.myForm.value.fechaExpiracion,
+      cvv: this.myForm.value.cvv,
+      fechaCreacion: new Date(),
+      fechaActualizacion: new Date(),
+      state: true,
     }
+
+    /*  console.log('tarjeta', TARJETA);      
+     confirm(this.myForm.controls.lastName.value + 'FORM ' + this.myForm.valid);
+     confirm(this.myForm.get("lastName")?.value + 'FORM ' + this.myForm.valid); */
+    console.log(this.myForm);
+
+    this.loading = true;
+
+    setTimeout(() => {
+      this._servicio.guardarTarjetaFirestore(TARJETA)
+        .then(() => {
+          console.log('Tarjeta creada');
+          this.toastr.success('Card was successfully registered ', ' Registered card ') /* Siempre pasa 2 parametros, el msj y el titulo */
+          this.myForm.reset();
+          this.loading = false;
+
+        }, error => {
+          this.loading = false;
+          this.toastr.error('Something is going wrong ', error) /* Siempre pasa 2 parametros, el msj y el titulo */
+          console.log('ERROR ', error);
+        });
+    }, 2000);
+  }
 
   /*   notValidtData(control: FormControl): {[s: string]: boolean} {
       if (control.value === 'Test') {
@@ -83,6 +104,11 @@ export class CearComponent implements OnInit {
 
     setName() {
       this.myForm.get("name")?.setValue("sachin.tendulkar@gmail.com");
+    }
+
+    showSuccess() {
+      /* Siempre pasa 2 parametros, el msj y el titulo */
+      this.toastr.success('Hello world!', 'Toastr fun!');
     }
 
 }
