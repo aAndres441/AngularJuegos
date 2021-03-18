@@ -1,107 +1,90 @@
 import { ThrowStmt } from '@angular/compiler';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { TarjetaCredito } from 'src/app/pages/models/TarjetaCredito';
 import { TarjetaService } from 'src/app/shared/services/tarjeta.service';
-import{ DatePipe } from '@angular/common';
+import { DatePipe } from '@angular/common';
+import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css']
 })
-export class ListComponent implements OnInit {
+export class ListComponent implements OnInit , OnDestroy{
 
-  listCards:TarjetaCredito[]=[];
+  listCards: TarjetaCredito[] = [];
   todayString: string;
   todayDate: Date;
-  
+  count:number;
+  errorSubscription: Subscription;
+  textoError='';
+
   constructor(private _servicio: TarjetaService,
-    private datePipe: DatePipe) {
+              private datePipe: DatePipe,
+              private router: Router,
+              private toastr: ToastrService) 
+  {
 
     this.todayString = new Date().toLocaleDateString();
     this.todayDate = new Date();
     console.log('FECHA ', this.todayString, 'en date ', this.todayDate);
+    this.count = 0;
+
+    this.errorSubscription = this._servicio.getError()
+    .subscribe((ata)=>{
+      this.textoError = ata;
+    })
+    
+  }
+  
+  ngOnInit(): void {
+    this.getTrjetas(); 
+  }
+  ngOnDestroy(): void {
+    this.errorSubscription.unsubscribe;
   }
 
-  ngOnInit(): void {
-    this.getTrjetas();
-
+  edit(tr: TarjetaCredito):void {
+    this._servicio.setTarjeta(tr);
    
   }
 
-  edit(tr: TarjetaCredito){
-    confirm('EDIT');
-  }
-  delete(tr: TarjetaCredito){
-    confirm('DELETE');
-  }
-  
-  getTrjetas(){
-    this._servicio.getTarjetas()
-    .subscribe((res)=>{
-      this.listCards=[];
-      res.forEach((element: any) => {
-        
-        
-        let tarjeta:TarjetaCredito = new TarjetaCredito(         
-          (element.payload.doc.data().name).toLocaleString(),
-          element.payload.doc.data().name,
-          element.payload.doc.data().name,
-          element.payload.doc.data().name,
-          element.payload.doc.data().fechaCreacion,
-          element.payload.doc.data().name, //: new Date(),
-          element.payload.doc.data().name,
-          ) 
-          tarjeta.id= element.payload.doc.id,
-
-        this.listCards.push({
-          id: element.payload.doc.id,
-          ...element.payload.doc.data()
-        })
-        console.log(this.listCards);
-        
-        /* 
-        tarjeta<TarjetaCredito> {
-        name:'Juan',
-        lastName:'Sugo',
-        numTarjeta:'12er12er12',
-        fechaExpiracion:'12/12',cvv:534, 
-        fechaCreacion:new Date() ,
-        fechaActualizacion: new Date(),
-        state: true
-      } */
-       
+  delete(trId: any): void {
+    this._servicio.delete(trId).then(() => {
+      this._servicio.setError('');
+      /* ToastrService Siempre pasa 2 parametros, el msj y el titulo */
+      /* Hay opciones individuales y opciones globalesen la raiz app-module . */
+      this.toastr.error('Card successfully removed','Record deleted',{       
       });
-      
+    }, error => {
+      console.log(error);
+      this._servicio.setError('An error occurred' + trId);
+      this.toastr.warning('An error occurred',error);
     })
   }
 
+  getTrjetas() {
+    this._servicio.getTarjetas()
+      .subscribe((res) => {
+        this.listCards = [];
+        res.forEach((element: any) => {
+          this.listCards.push({
+            id: element.payload.doc.id,
+            ...element.payload.doc.data()
+          })
+          //console.log('Lista',this.listCards);                
+        });
+      })     
+  }
+
+  /* la ruta a navegar toma como referencia a una relativa como base */
+  reload() {
+    this.router.navigate(['home'], {
+      /* relativeTo: this.route, */
+      queryParams: { ID: '1973' },
+       fragment: 'Mal'
+     });
+    }
 }
-/*  this.listCards=[
-      {name:'Juan',
-      lastName:'Sugo',
-      numTarjeta:'12er12er12',
-      fechaExpiracion:'12/12',cvv:534, 
-      fechaCreacion:new Date() ,
-      fechaActualizacion: new Date(),
-      state: true
-    },
-      {name:'Juan',lastName:'Sugo',numTarjeta:'12er12er12',
-      fechaExpiracion:'12/12',cvv:534, 
-      fechaCreacion:new Date() ,
-      fechaActualizacion: new Date(),
-      state: true
-    },
-      {name:'Juan',lastName:'Sugo',numTarjeta:'12er12er12',
-      fechaExpiracion:'12/12',cvv:534, 
-      fechaCreacion:new Date() ,
-      fechaActualizacion: new Date(),
-      state: true
-    },
-      {name:'Juan',lastName:'Sugo',numTarjeta:'12er12er12',
-      fechaExpiracion:'12/12',cvv:534, 
-      fechaCreacion:new Date() ,
-      fechaActualizacion: new Date(),
-      state: true
-    },
-    ]; */

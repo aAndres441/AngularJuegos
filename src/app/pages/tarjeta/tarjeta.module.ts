@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { FormComponent, CearComponent, ListComponent } from './components/index';
+import { FormComponent, CearComponent, ListComponent, SpinnerComponent } from './components/index';
 import { TarjetaCreditoComponent } from './container/index';
 import { DatePipePipe } from './date-pipe.pipe';
 
@@ -14,7 +14,10 @@ const CONTAINER = [
 const COMPONENTS = [
   FormComponent,
   CearComponent,
-  ListComponent
+  ListComponent,
+  SpinnerComponent,
+  TarjetaCreditoComponent,
+  DatePipePipe
 ]
 
 const MODULES = [
@@ -26,9 +29,7 @@ const MODULES = [
 
   declarations: [
     CONTAINER,
-    COMPONENTS,
-    TarjetaCreditoComponent,
-    DatePipePipe
+    COMPONENTS
   ],
 
   imports: [

@@ -57,23 +57,23 @@ export class ListarImagenComponent implements OnInit, OnDestroy {
   getImages() {
     this._servicio.getImages(this.nombreABuscar, this.pageActual, this.imgPerPage)
       .subscribe((res) => {
-        
+
         if (res.hits.length === 0) {
           this._servicio.setError('No images found');
           return; //importante el return para terminar ejecucion
         };
 
-console.log('Redondea ABAJO', Math.ceil(res.totalHits/this.imgPerPage));
-console.log('redondea ARRIBA',  Math.floor(res.totalHits/this.imgPerPage));
+        console.log('Redondea ABAJO', Math.ceil(res.totalHits / this.imgPerPage));
+        console.log('redondea ARRIBA', Math.floor(res.totalHits / this.imgPerPage));
 
-        this.totalHits = Math.ceil(res.totalHits/this.imgPerPage);
-       
+        this.totalHits = Math.ceil(res.totalHits / this.imgPerPage);
+
         this.listaImages = res.hits;
 
         console.log('getImages--', res);
 
       }, error => {
-        this._servicio.setError('View service');        
+        this._servicio.setError('View service');
       });
   }
   

@@ -4,3 +4,35 @@ h5{
     font-family: 'Patua One', cursive;
     font-size: x-large;
   }
+
+  .wide{
+    width: 100%;
+  }
+
+  /* td {     width: 100%; } */
+
+  .horizontal-scroll {
+    overflow: hidden;
+    overflow-x: auto;
+    clear: both;
+    width: 100%;
+    /* margin: 0 auto; */
+    display: flex;
+  }
+  
+  .my-table {
+    min-width: rem-calc(640);
+    height: 200px;
+  }
+
+  .alert{
+    border: 2px solid rgb(51, 119, 247);
+    color: rgb(21, 142, 241); 
+    text-align: center;
+    font-size: 25px;
+    background-color: transparent;
+}
+img{
+    max-width: 80%;
+    width: 100px;
+}
