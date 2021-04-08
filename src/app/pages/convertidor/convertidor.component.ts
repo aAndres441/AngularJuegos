@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ConvertidorComponent implements OnInit {
 
   title = 'CONVERTIDOR';
-  quantity = 0;
+  quantity = 10;
   want = 'Pesos';
   have = 'USD';
   total = 0;

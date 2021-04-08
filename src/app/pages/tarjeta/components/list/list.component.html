@@ -1,12 +1,14 @@
 <div class="card">
     <div class="card-body">
-        <h5 class="titulo" pb-2>LIST</h5>
+        <h5 class="titulo" pb-2 >
+            LIST
+        </h5>
         <table class="table table-responsive scroll wide table-success table-hover">
             <td>Date{{todayDate| date:"MM/yy"}}</td>
             <td>>{{todayString}}</td>
             <td>Count {{count}}</td>
         </table>
-        <div class="card-footer" *ngIf="(count>0)" style="background-color: chartreuse;">
+        <div class="card-footer" *ngIf="(count>0)" style="background-color: rgb(141, 245, 38);">
             COUNT= {{count}}
         </div>
         <div class="col-lg-12">
@@ -37,6 +39,9 @@
                             <i class="fa fa-edit text-info" (click)="edit(tr)"></i>
 
                             <i class="fa fa-trash text-danger" (click)="delete(tr.id)"></i>
+
+                            <i class="fa fa-get-pocket text-success" (click)="getCardById(tr.id)"></i>
+                            <i class="fa fa-wrench text-light" (click)="setCardById(tr.id)"></i>
                         </td>
                     </tr>
 
@@ -46,18 +51,29 @@
         </div>
 
 
-
+<div class="row text-center mb-3">
+    <div class="col-lg-6">
+        <button class="btn btn-info btn-block" style="background-color: lightgreen;" >
+            Nothing
+        </button>
+    </div>
+    <div class="col-lg-6">
         <button class="btn btn-info btn-block" style="background-color: lightgreen;" (click)="reload()">
             Reload to index
         </button>
+    </div>
+</div>
+        
 
         <div class="alert alert-dismissible alert-success" *ngIf="textoError">
             <strong>
                 {{textoError | uppercase}}
             </strong>
             <div class="flex-container mt-2">
-                <img src="assets/imagenes/error-robot.png" alt="">            </div>
+                <img src="assets/imagenes/error-robot.png" alt="">
+            </div>
 
         </div>
 
     </div>
+</div>

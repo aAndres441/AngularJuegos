@@ -1,11 +1,23 @@
-<div class="body">
-    <div class="card mb-2">
-        <h2 class="text-center">
-            {{title}}
-        </h2>
+<div class="flex-container">
+    <div class="card1">
+        <app-menu></app-menu>
     </div>
-
-    <div class="col-lg-10 offset-lg-1" style="background-color: aliceblue;">
-        <app-list></app-list>
+    <div class="body">
+        <div class="card mb-2" style="flex-shrink: 0;">
+            <h2 class="text-center">
+                {{title}}
+            </h2>
+        </div>
+    <!-- flex-grow:8 /flex-grow:2 / flex-basis:10% / o flex 2 0 200px son las 3 prop juntas-->
+        <div class="col-lg-12 offset-lg-1" style="order:1; flex-grow:8; background-color: aliceblue;">
+            <app-list 
+                (empOut)="elEmpleado($event)"
+                ></app-list>
+           <!--  <app-list (listEmplead)="listEmp" (empOut)="getEmp($event)"
+                (getEmp)="($event)"></app-list> -->
+        </div>   
+    </div>
+    <div class="col-lg-10 offset-lg-1" style="flex-grow:2; background-color: rgb(165, 228, 207);">
+        <app-detail [empInput]="unEmp" ></app-detail>
     </div>
 </div>

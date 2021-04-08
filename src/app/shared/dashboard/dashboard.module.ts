@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DashboardComponent,
+import { DashboardTableComponent,
           ListaComponent,
           TablaComponent } from './index';
 
 const COMPONENTS = [
-  DashboardComponent,
+  DashboardTableComponent,
   ListaComponent,
   TablaComponent
 ]

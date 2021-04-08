@@ -15,6 +15,7 @@ import { BitlyModule } from './bitly/bitly.module';
 import { NoticiasModule } from './noticias/noticias.module';
 import { PixabayModule } from './pixabay/pixabay.module';
 import { TarjetaModule } from './tarjeta/tarjeta.module';
+import { RoutingsModule } from './routings/routings.module';
 
 
 const COMPONENTS = [
@@ -36,7 +37,8 @@ const MODULES = [
   BitlyModule,
   NoticiasModule,
   PixabayModule,
-  TarjetaModule
+  TarjetaModule,
+  RoutingsModule
 ]
 
 @NgModule({
@@ -55,6 +57,7 @@ const MODULES = [
   exports: [
     ...COMPONENTS,
     ...MODULES
-  ],
+  ]
+
 })
 export class PagesModule { }

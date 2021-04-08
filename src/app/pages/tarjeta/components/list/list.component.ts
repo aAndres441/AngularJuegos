@@ -20,6 +20,7 @@ export class ListComponent implements OnInit , OnDestroy{
   count:number;
   errorSubscription: Subscription;
   textoError='';
+  
 
   constructor(private _servicio: TarjetaService,
               private datePipe: DatePipe,
@@ -61,6 +62,31 @@ export class ListComponent implements OnInit , OnDestroy{
     }, error => {
       console.log(error);
       this._servicio.setError('An error occurred' + trId);
+      this.toastr.warning('An error occurred',error);
+    })
+  }
+
+  getCardById(id: string|undefined){
+    const res = this._servicio.getCardById(id).subscribe((data)=>{
+      console.log('DATA', data, 'ID', data.id);
+      if(!data){
+        console.log('No exist Data');        
+      }else{
+        console.log('DATA ID', data.ref.firestore.app.options.valueOf());        
+      }
+    })
+  }
+
+  setCardById(id: string|undefined, name="San Francisco"): void{
+    this._servicio.setCardById(id, name).then(() => {
+      this._servicio.setError('');
+      /* ToastrService Siempre pasa 2 parametros, el msj y el titulo */
+      /* Hay opciones individuales y opciones globalesen la raiz app-module . */
+      this.toastr.info('Card successfully updated','Record updated',{       
+      });
+    }, error => {
+      console.log(error);
+      this._servicio.setError('An error occurred when set');
       this.toastr.warning('An error occurred',error);
     })
   }

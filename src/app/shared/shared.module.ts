@@ -6,20 +6,16 @@ import { ErrorComponent } from './error/error.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
-/* import { TablaComponent } from './dashboard/tabla/tabla.component';
-import { ListaComponent } from './dashboard/lista/lista.component'; */
 import { SpinnerComponent } from './spinner/spinner.component';
 import { DashboardModule } from './dashboard/dashboard.module';
 
 
 const COMPONENTS = [
   ErrorComponent,
-  HomeComponent, 
+  HomeComponent,
   NavbarComponent,
   FooterComponent, 
-  /* TablaComponent,
-  ListaComponent, */
-  SpinnerComponent
+  SpinnerComponent,
 ]
 
 const MODULES = [

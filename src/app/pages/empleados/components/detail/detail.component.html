@@ -1,0 +1,22 @@
+
+<div class="card"style="background-color: aliceblue;">
+    <div *ngIf="empInput; else nada">
+        <h2>{{empInput.nombre | uppercase}} </h2>
+        <div><span>id: </span>{{empInput.legajo}}</div>
+        <div>
+          <label for="hero-name">Hero apellido: </label>
+          <input id="hero-name" [(ngModel)]="empInput.apellido" placeholder="Hero name"/>
+        </div>
+        <button (click)="goBack()">go back</button>
+      </div>
+
+      <!--  <td>{{empInput.legajo}}</td>
+                <td>{{empInput.nombre}}</td>
+                <td>{{empInput.apellido}}</td>
+                <td>{{empInput.sexo}}</td> -->
+                
+           <ng-template #nada>
+            <h4 style="background-color: rgb(255, 0, 0); color:rgb(255, 255, 255); text-align: center">Careful: No employee</h4>
+
+           </ng-template>
+</div>

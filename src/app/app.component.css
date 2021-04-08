@@ -94,7 +94,7 @@
   .card {
     border-radius: 4px;
     border: 1px solid #eee;
-    background-color: #fafafa;
+    background-color: #f1edaf;
     height: 40px;
     width: 200px;
     margin: 0 8px 16px;
@@ -107,8 +107,10 @@
     line-height: 24px;
   }
 
-  .card-container .card:not(:last-child) {
+  .card-container .card:not(:first-child) {
     margin-right: 0;
+    background-color: rgba(98, 250, 51, 0.507);
+    color: yellow;
   }
 
   .card.card-small {
@@ -121,22 +123,22 @@
   }
 
   .card-container .card:not(.highlight-card):hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+    transform: translateY(-13px);
+    box-shadow: 0 4px 17px rgba(7, 32, 2, 0.658);
   }
 
   .card-container .card:not(.highlight-card):hover .material-icons path {
-    fill: rgb(105, 103, 103);
+    fill: rgb(20, 178, 241);
   }
 
   .card.highlight-card {
-    background-color: black;
+   /*  background-color: rgb(253, 6, 6);
     color: rgb(33, 243, 14);
     font-weight: 200;
     border: none;
     width: auto;
     min-width: 10%;
-    position: relative;
+    position: relative; */
     /* display: flex;
     align-content:flex-start; */
   }
@@ -183,7 +185,7 @@
   }
 
   .terminal::before {
-    content: "\2022 \2022 \2022";
+    content: "\2022 \2022 \2022 \2023";
     position: absolute;
     top: 0;
     left: 0;
@@ -193,14 +195,14 @@
     width: 100%;
     font-size: 2rem;
     line-height: 0;
-    padding: 14px 0;
+    padding: 14px;
     text-indent: 4px;
   }
 
   .terminal pre {
     font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
     color: white;
-    padding: 0 1rem 1rem;
+    padding: 0 3rem 1rem;
     margin: 0;
   }
 

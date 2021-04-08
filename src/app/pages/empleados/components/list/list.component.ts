@@ -1,6 +1,6 @@
 import { toBase64String } from '@angular/compiler/src/output/source_map';
-import { Component, OnInit } from '@angular/core';
-import { FindValueSubscriber } from 'rxjs/internal/operators/find';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Subject } from 'rxjs';
 import { Empleado } from 'src/app/pages/models/Empleado';
 
 @Component({
@@ -19,6 +19,8 @@ export class ListComponent implements OnInit {
   ];
 
   radioSeleccionado = 'Todos';
+
+  @Output() empOut = new EventEmitter<Empleado>();
 
   constructor() { 
   }
@@ -54,5 +56,31 @@ export class ListComponent implements OnInit {
     console.log('FALSE');    
     return false;
   }
+
+  ver(num:number){
+    console.log(num);
+    
+  }
+
+  getEmp(num:number){
+  console.log(num);
+   /* 
+   Abajo, filter  retorna lista
+    let res = this.listEmplead.filter(function(dev){
+      return dev.legajo===num;
+    }); */
+    this.listEmplead.forEach(element => {
+      if(element.legajo===num){
+        this.empOut.emit(element);
+        console.log('Emite desde Lista', element.nombre );  
+      }
+    });
+  }
+  
+  getEm2p(num:number){
+    console.log(num);
+
+  }
+  
 
 }

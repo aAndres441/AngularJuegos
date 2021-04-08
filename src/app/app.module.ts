@@ -42,7 +42,7 @@ const FIREBASE = [
     ReactiveFormsModule,
     HttpClientModule,
     FIREBASE,
-    MODULES,
+    ...MODULES,
     
     BrowserAnimationsModule, /*  required animations module */
     ToastrModule.forRoot({

@@ -1,10 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 body{
     /* background-image: url('./assets/imagenes/fondo.jpg'); */
-    background: linear-gradient(rgba(182, 180, 180, 0.61),purple),url('./assets/imagenes/fondo.jpg');
+    background: linear-gradient(rgba(182, 180, 180, 0.61),rgb(76, 230, 158)),
+                url('./assets/imagenes/fondo.jpg');
     background-position: center;
     background-size: cover;
     /* height: 100vh; */
+    /* font-size: 8px; 
+    podria definir aca el font y usar rem como medida
+    1 rem = 16 px */
 }
 
 .myTitulo {

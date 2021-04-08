@@ -1,0 +1,25 @@
+<!--  -->
+    <header>
+        <div class="contenedor" #contenedor id="contenedor"(window:scroll)="doSomethingOnWindowScroll($event)">
+            <div class="logo" #logo id="logo">
+                <img src="http://dummyimage.com/200x100/000/fff&text=LOGO" alt="logos"  width="100%">
+            </div>
+            <nav class="menu" #menu id="menu"> <!-- [ngStyle]="{backgroundColor:'yellow'}" -->
+                <ul>
+                    <li><a routerLink="/piano">Inicio</a></li>
+                    <li><a routerLink="/convertidor">convertidor</a></li>
+                    <li><a routerLink="/agenda">agenda</a></li>
+                    <li><a routerLink="/tarjeta">Contacto</a></li>
+                    <li><a routerLink="/dashboard">Proyectos</a></li>
+                </ul>
+            </nav>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Non perferendis blanditiis voluptate repudiandae, 
+                saepe vel ipsam cum quia tempora nostrum suscipit 
+                inventore dolore quaerat,
+                 qui hic, incidunt consequatur ullam ut.
+                </p>
+              
+        </div>
+    </header>
+

@@ -1,0 +1,14 @@
+.btn{
+    border: 1px solid whitesmoke;
+    border-radius: 20%;
+    
+}
+a{
+    font-size: 2rem;
+    color: wheat;
+}
+
+a:hover{
+    background-color: white;
+    color: black;
+}

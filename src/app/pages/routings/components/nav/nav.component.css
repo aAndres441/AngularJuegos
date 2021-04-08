@@ -1,0 +1,12 @@
+.navbar{
+    background-color: #c0dde4;
+    text-align: center;
+    align-content: center;
+}
+.navbar a{
+    color:#c0dde4;
+    height: 3rem;
+    /* font-family:'Nerko'; */
+    /* font-family: 'Raleway', sans-serif; */
+    font-family: Verdana, sans-serif;
+}

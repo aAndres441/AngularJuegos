@@ -35,6 +35,5 @@
     align-items: center;
     display: flexbox;
     width: auto;
-    border-color: solid 2px whitesmoke;
-    background-color: darkblue;
+    border-color: solid 2px rgb(101, 126, 238);
 }

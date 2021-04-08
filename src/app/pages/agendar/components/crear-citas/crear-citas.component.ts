@@ -20,6 +20,7 @@ export class CrearCitasComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
   add() {
     if (this.nombre == '' || this.fecha == '' || this.hora == '' || this.sintomas == '') {
       this.formIncorrecto = true;

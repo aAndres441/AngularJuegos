@@ -28,9 +28,16 @@
                 <td>{{e.apellido}}</td>
                 <td>{{e.sexo}}</td>
                 <td>{{e.salario | currency}}</td>
-                <td><button class="btn btn-succes" style="color: rgb(113, 227, 255);" 
+                <td>
+                  <button class="btn btn-succes" style="color: rgb(113, 227, 255);" 
                     (click)="addEmployed(e)">
                     Add
+                  </button>
+                  
+                  <button class="btn btn-secondary " 
+                  (click)="getEmp(e.legajo)">
+                  <i class="fa fa-edit text-info" style="font: white;"> </i>
+                    
                   </button>
                 </td>
               </tr>

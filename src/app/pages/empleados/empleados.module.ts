@@ -1,13 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ListComponent, CountComponent } from './components/index';
-import { EmpleadosComponent } from './container/index';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+
+import { ListComponent, CountComponent, DetailComponent, MenuComponent } from './components/index';
+import { EmpleadosComponent } from './container/index';
 
 
 const COMPONENTS = [
   ListComponent, 
-  CountComponent
+  CountComponent,
+  DetailComponent,
+    MenuComponent
 ];
 
 const CONTAINER = [
@@ -16,7 +20,8 @@ const CONTAINER = [
 
 const MODULES = [
   CommonModule,
-  FormsModule 
+  FormsModule,
+  RouterModule,
 ];
 
 @NgModule({
