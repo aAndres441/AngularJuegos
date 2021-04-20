@@ -31,10 +31,10 @@ const MODULES = [
     ...MODULES
   ],
 
-  exports: [
+  /* exports: [
     ...COMPONENTS,
     ...CONTAINER
-  ],
+  ], */
 
 })
 export class ClientModule { }

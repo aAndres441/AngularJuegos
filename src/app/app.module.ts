@@ -18,6 +18,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { PagesModule } from './pages/pages.module';
 import { SharedModule } from './shared/shared.module';
 import { AdminModule } from './@admin/pages/admin.module';
+import { PublicModule } from './@public/pages/public.module';
 
 import { ShortInterceptor } from './shared/services/short.interceptor';
 import { NoHaveImageDirective } from './directivas/no-have-image.directive';
@@ -25,7 +26,9 @@ import { NoHaveImageDirective } from './directivas/no-have-image.directive';
 
 const MODULES = [
   PagesModule,
-  SharedModule
+  SharedModule,
+  AdminModule,
+  PublicModule
 ]
 
 const FIREBASE = [
@@ -38,13 +41,13 @@ const FIREBASE = [
     NoHaveImageDirective
   ],
   imports: [
-    BrowserModule,
+    BrowserModule,    
+    ...MODULES,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
     FIREBASE,
-    ...MODULES,
     
     BrowserAnimationsModule, /*  required animations module */
     ToastrModule.forRoot({

@@ -38,10 +38,10 @@ const myRoutes: Routes = [
    {path: 'myRoutServ', component: DashComponent},
   {path: 'myRoutingLayout', component: LayoComponent},
    
- {path:'client', loadChildren:()=>
+ /* {path:'admin/client', loadChildren:()=>
     import('./@admin/pages/client/client.module')
   .then(m=>m.ClientModule)
-},
+}, */
  {path:'contact', loadChildren:()=>
     import('./@public/pages/contact/contact.module')
   .then(m=>m.ContactModule)
@@ -50,6 +50,10 @@ const myRoutes: Routes = [
   import('./@public/pages/vista/vista.module')
   .then(m=>m.VistaModule)
 },
+/* {path:'admin', loadChildren:()=>
+  import('./@admin/pages/dashb/dashb.module')
+  .then(m=>m.DashbModule)
+}, */
 
 
   {path: 'news', component: NoticiasComponent},
@@ -63,6 +67,7 @@ const myRoutes: Routes = [
  /*  {path: 'BMI', component: CalculoComponent, children: [
     {path: 'resultado', component: ResultadoComponent},
   ]}, */
+
   {path: '', redirectTo: 'home' , pathMatch: 'full'},  // determinada para cuando se carga la app
   {path: '**', redirectTo: 'error' , pathMatch: 'full'},  // comodin determinada por si n o coincide ninguna direccion y siempre al final,+
 
