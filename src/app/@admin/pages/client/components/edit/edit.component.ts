@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-create',
-  templateUrl: './create.component.html',
-  styleUrls: ['./create.component.css']
+  selector: 'app-edit',
+  templateUrl: './edit.component.html',
+  styleUrls: ['./edit.component.css']
 })
-export class CreateComponent implements OnInit {
+export class EditComponent implements OnInit {
 
-  title='Create ';
+  title='Edit ';
 
   constructor(private router: Router) { }
 
@@ -16,7 +16,7 @@ export class CreateComponent implements OnInit {
   }
 
   enter(){
-    confirm('Hello create');
+    confirm('Hello Edit');
     /* this.router.navigate(['/tarjeta']); */
   }
 

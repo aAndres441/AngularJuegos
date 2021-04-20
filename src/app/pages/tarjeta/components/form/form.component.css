@@ -46,3 +46,25 @@
     color: rgb(120, 153, 0);
     background-color: rgb(191, 248, 226);
 }
+
+.btn {
+  border-color: #ecdd0b;
+  position: relative;
+  overflow: hidden; /* No deja salir nada de su contenedor */
+  z-index: 1; /* selecciona la capa */
+}
+.btn::after{
+content: "";
+position: absolute;
+top: 0;
+left: 0%;
+transform: translateX(100%);
+width:0;
+height:100%;
+background-color: #90ee90;
+z-index: -1; /* elije capa de abajo del texto */
+transition: width 0.4s ease-in-out;
+}
+.btn:hover::after{
+  width: 100%;
+}

@@ -65,7 +65,7 @@ export class FormComponent implements OnInit {
         Validators.maxLength(10)
           , Validators.minLength(10)]],
         fechaExpiracion: ['', [Validators.required,
-        Validators.maxLength(5),
+        Validators.maxLength(10),
         Validators.minLength(5)]],
         cvv: ['', [Validators.required,
         Validators.maxLength(3),

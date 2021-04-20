@@ -14,8 +14,8 @@ import { PianoComponent } from './pages/piano/piano.component';
 import { PixabayComponent } from './pages/pixabay/container/pixabay/pixabay.component';
 import { GastosComponent } from './pages/presupuesto/components';
 import { PresupuestoComponent } from './pages/presupuesto/container/presupuesto/presupuesto.component';
-import { LayoComponent } from './pages/routings/components';
-import { DashComponent } from './pages/routings/container';
+import { LayoComponent } from './pages/routings/components/index';
+import { DashComponent } from './pages/routings/container/index';
 import { TareasComponent } from './pages/tareas/tareas.component';
 import { TarjetaCreditoComponent } from './pages/tarjeta/container/index';
 import { DashboardTableComponent } from './shared/dashboard';
@@ -38,17 +38,20 @@ const myRoutes: Routes = [
    {path: 'myRoutServ', component: DashComponent},
   {path: 'myRoutingLayout', component: LayoComponent},
    
-/*  {path:'myLazyRoutes', loadChildren:()=>
-    import('./pages/routings/container/dash/dash.component')
-  .then(m=>m.DashComponent)},*/
+ {path:'client', loadChildren:()=>
+    import('./@admin/pages/client/client.module')
+  .then(m=>m.ClientModule)
+},
+ {path:'contact', loadChildren:()=>
+    import('./@public/pages/contact/contact.module')
+  .then(m=>m.ContactModule)
+},
+{path:'vista', loadChildren:()=>
+  import('./@public/pages/vista/vista.module')
+  .then(m=>m.VistaModule)
+},
 
-  {path:'createCli',loadChildren:()=>import('./pages/client/create/create-routing.module')
-.then(m=>m.CreateRoutingModule)},
-  {path:'detailsCli',loadChildren:()=>import('./pages/client/details/details-routing.module')
-.then(m=>m.DetailsRoutingModule)},
-  {path:'editCli',loadChildren:()=>import('./pages/client/edit/edit-routing.module')
-.then(m=>m.EditRoutingModule)},
-  
+
   {path: 'news', component: NoticiasComponent},
   {path: 'presupuesto', component: PresupuestoComponent},
   {path: 'gastos', component: GastosComponent},
@@ -61,12 +64,15 @@ const myRoutes: Routes = [
     {path: 'resultado', component: ResultadoComponent},
   ]}, */
   {path: '', redirectTo: 'home' , pathMatch: 'full'},  // determinada para cuando se carga la app
-  {path: '**', redirectTo: 'error' , pathMatch: 'full'},  // determinada por si n o coincide ninguna direccion y siempre al final,+
+  {path: '**', redirectTo: 'error' , pathMatch: 'full'},  // comodin determinada por si n o coincide ninguna direccion y siempre al final,+
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(myRoutes)],
+  imports: [RouterModule.forRoot(myRoutes,
+    {useHash:true,
+    scrollPositionRestoration:'enabled'})],
+
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

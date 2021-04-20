@@ -107,7 +107,7 @@ export class ListComponent implements OnInit , OnDestroy{
 
   /* la ruta a navegar toma como referencia a una relativa como base */
   reload() {
-    this.router.navigate(['home'], {
+    this.router.navigate(['empleados'], {
       /* relativeTo: this.route, */
       queryParams: { ID: '1973' },
        fragment: 'Mal'

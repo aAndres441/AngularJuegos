@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import {AngularFireModule} from '@angular/fire';
@@ -17,6 +17,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 import { PagesModule } from './pages/pages.module';
 import { SharedModule } from './shared/shared.module';
+import { AdminModule } from './@admin/pages/admin.module';
+
 import { ShortInterceptor } from './shared/services/short.interceptor';
 import { NoHaveImageDirective } from './directivas/no-have-image.directive';
 
@@ -62,7 +64,7 @@ const FIREBASE = [
     AngularFireAuth
   ],
 
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 
 })
 

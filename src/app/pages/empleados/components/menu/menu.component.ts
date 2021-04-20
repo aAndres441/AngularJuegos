@@ -26,7 +26,11 @@ export class MenuComponent implements OnInit {
     console.log('Ancho ' + ancho);
     console.log('alto2 ' + alto2);
 
-    console.log("La resolución de tu pantalla es: " + screen.width + " x " + screen.height)
+    console.log("La resolución de tu pantalla es: " + screen.width + " x " + screen.height);
+
+    var altura = document.getElementById('menu')?.offsetTop;
+    var alPiso = document.body.offsetHeight;
+    console.log('altura ', altura, 'PISO ', alPiso);
   }
 
   ngOnInit(): void {
@@ -46,13 +50,24 @@ export class MenuComponent implements OnInit {
     //document.documentElement.scrollTop = 100;
 
     //distancia entre parte sup y el menu
-    var altura = document.getElementById('menu')?.offsetTop
-    console.log('altura ', altura);
+    var altura = document.getElementById('menu')?.offsetTop;
+    var altura4 = document.getElementById('contenedor')?.offsetHeight;
+    var altura5 = document.getElementById('header')?.offsetTop;
+    var altura6 = document.getElementById('paragraph')?.offsetTop;
+    var altura7 = document.getElementById('paragraph')?.offsetHeight;
+    var alPiso = document.body.offsetHeight;
+    var alPiso2 = document.documentElement.scrollWidth;
+    console.log('altura ', altura, 'PISO ', alPiso, 'optr ' , alPiso2, '4 ', altura4, '5 ', altura5, '6 ', altura6, '7 ', altura7);
+    // || document.documentElement.scrollHeight === alPiso-300
     //window.onscroll:(((this: GlobalEventHandlers, ev: Event) => any) & ((this: Window, ev: Event) => any)) | null
     if (document.documentElement.scrollTop > altura!) {
       document.getElementById('menu')!.className = 'menu-fixed';
-    } else {
+    } if(document.documentElement.scrollTop >altura6!){
+      document.getElementById('paragraph')!.className = 'menu-fixed2';
+    }
+     else {
       document.getElementById('menu')?.classList.remove('menu-fixed');
+      document.getElementById('paragraph')!.classList.remove ('menu-fixed2');
     }
   }
 

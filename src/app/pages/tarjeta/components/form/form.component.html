@@ -79,9 +79,11 @@
                                 [class.greenIcon]="this.myForm.get('fechaExpiracion')?.valid"
                                 [class.redIcon]="this.myForm.get('fechaExpiracion')?.invalid && this.myForm.get('fechaExpiracion')?.touched">
                             </i>
-                        </span>
-                        <input type="text" class="form-control" formControlName="fechaExpiracion" name="fechaExpiracion"
-                            required placeholder="MM/YY" maxlength="5">
+                        </span><!--  <input type="date"class="form-control" 
+                            id="date"
+                            [(ngModel)]= "fecha" > -->
+                        <input type="date" class="form-control" formControlName="fechaExpiracion" name="fechaExpiracion"
+                            required placeholder="MM/YY" maxlength="10">
                     </div>
 
                     <span class="help-block" style="color: hotpink;"

@@ -19,7 +19,9 @@ export class HomeComponent implements OnInit, OnDestroy {
   ngOnInit() { }
 
   ngOnDestroy(): void {
-    throw new Error('Method not implemented.');
+    this.myFirstObs.unsubscribe();
+    this.myInterval.unsubscribe();
+    //throw new Error('Method not implemented.');
   }
 
 }

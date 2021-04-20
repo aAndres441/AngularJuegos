@@ -1,15 +1,43 @@
+/* mis variables */
+:root{
+  --color-green:rgb(100, 248, 100);
+  --color-pinky:#ffc0cb;
+  --color-putple:rgb(177, 100, 248);
+  --color-white:#fafafa;
+  --color-orange:rgb(248, 179, 100);
+  --color-blacky:rgb(19, 18, 18);
+  --text-color:rgb(211, 11, 104);
+}
+
+/*  QUITAR STYLS  DEL NAVEGAOR*/
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+body{
+  width: auto;
+  height:100vh;
+}
+
 h5{
-    color: rgb(97, 99, 236);
+    color:var(--teal);
     text-align: center;
     font-family: 'Patua One', cursive;
     font-size: x-large;
   }
 
-  .wide{
+  /* .wide{
     width: 100%;
-  }
+  } */
 
   /* td {     width: 100%; } */
+   td {
+    color:var(--indigo);
+   } 
 
   .horizontal-scroll {
     overflow: hidden;
@@ -22,7 +50,7 @@ h5{
   
   .my-table {
     min-width: rem-calc(640);
-    height: 200px;
+    height: 14rem;
   }
 
   .alert{
@@ -32,7 +60,90 @@ h5{
     font-size: 25px;
     background-color: transparent;
 }
+
 img{
     max-width: 80%;
     width: 100px;
+}
+
+/* Practico de css bortones con flex */
+
+.botones{
+  display: flex;
+  position: relative;
+  padding:.5rem;
+  border: 1px solid black;
+  justify-content: center;   
+  justify-items: center;
+  flex-direction: row-reverse;  
+  align-items: center;  
+}
+
+.botones button {
+  align-items: center;  
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color:transparent;
+  border-radius:10px;
+  cursor: pointer;
+  margin:1rem .5em;  
+  padding: .6rem 1rem; /* arribaAbajo/costados */
+  font-weight: bold;
+  font-size: 1em;
+  color: white;
+}
+/* 
+.botones button:focus{
+  outline:0;
+} */
+
+.btn-1 {
+ border-color: #90ee90;
+ transition:box-shadow 0.7s ease-in-out;
+ border:none;
+}
+.btn-1:hover{
+  box-sizing: 1.5px;
+  box-shadow:0 0 1rem 1rem blue inset; /* inset lleva la sombra para adentro */
+}
+
+.btn-2 {
+  border-color: red;
+  box-shadow: 0 0 2rem 1rem red inset; 
+  transition:box-shadow 0.3s ease-in-out;
+}
+.btn-2:hover{
+ box-shadow: 0 0 .3rem 0 red inset, 0 0 .3rem .5rem rgb(200, 255, 0);
+}
+
+.btn-3 {
+  border-color: orange;
+  background-image: linear-gradient(45deg, orange 50%, rgb(6, 126, 46) 50%);
+  background-position: 100%;
+  background-size: 400%;
+  transition: background 0.4s ease-in-out;
+}
+.btn-3:hover{
+  background-position: 0;
+}
+
+.btn-4 {
+  border-color: #ecdd0b;
+  position: relative;
+  overflow: hidden; /* No deja salir nada de su contenedor */
+  z-index: 1; /* selecciona la capa */
+}
+.btn-4::after{
+content: "";
+position: absolute;
+top: 0;
+left: 50%;
+transform: translateX(-50%);
+width:0;
+height:100%;
+background-color: #90ee90;
+z-index: -1; /* elije capa de abajo del texto */
+transition: width 0.4s ease-in-out;
+}
+.btn-4:hover::after{
+  width: 100%;
 }

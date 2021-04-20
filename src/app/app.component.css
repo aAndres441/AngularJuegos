@@ -86,7 +86,8 @@
 
   .card-container {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; 
+    order: inherit;
     justify-content: center;
     margin-top: 16px;
   }
@@ -96,7 +97,7 @@
     border: 1px solid #eee;
     background-color: #f1edaf;
     height: 40px;
-    width: 200px;
+    width: auto;
     margin: 0 8px 16px;
     padding: 16px;
     display: flex;
@@ -114,8 +115,8 @@
   }
 
   .card.card-small {
-    height: 16px;
-    width: 168px;
+    height: 4rem;
+    width: 12rem;
   }
 
   .card-container .card:not(.highlight-card) {
@@ -132,15 +133,15 @@
   }
 
   .card.highlight-card {
-   /*  background-color: rgb(253, 6, 6);
+    background-color: rgba(180, 34, 34, 0.151);
     color: rgb(33, 243, 14);
     font-weight: 200;
     border: none;
     width: auto;
     min-width: 10%;
-    position: relative; */
-    /* display: flex;
-    align-content:flex-start; */
+    position: relative;
+    display: flex;
+    align-content:flex-start;
   }
 
  /*  .card.card.highlight-card span {

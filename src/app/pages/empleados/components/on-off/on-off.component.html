@@ -1,0 +1,68 @@
+<div class="mioContenedor col-lg-10 offset-lg-1 pl-2">
+    <main class="dark" id="main" [ngClass]="{dark2: view}" >
+        <section class="card" id="card" [ngClass]="{dark2: view}">
+            <div class="main_flex-container" [ngClass]="{dark2: view}">
+                <div class="main_title" [ngClass]="{dark2: view}">
+                    <h3 [ngClass]="{dark2: view}">{{title}}</h3>
+                </div>
+
+                <div class="main_switch" id="main_switch" [ngClass]="{dark2: view}">
+                    <i class="fa fa-sun-o" aria-hidden="true"></i>
+                    <button class="btn btn-block" (click)="toogleView1()" (click)="onOff()">
+                        light and dark
+                    </button>
+                    <i class="fa fa-moon-o " aria-hidden="true"></i>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div class="col-xs-12" *ngIf="view" [ngClass]="{myColorEdit: view}">
+        <h1>EDIT of {{view}}</h1>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault1" (input)="cambiarAltura($event)">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label>
+          </div>
+          <div>
+            <label class="switch"><input type="checkbox" class="check"id="flexSwitchCheckDefault2" name="check" checked>
+                <span class="slider round" (click)="on_off(this)" (click)="province()">
+                </span>
+            </label>
+
+          </div>
+        <p><q>Form template</q></p>
+        <a class="btn-3"><i class="fa fa-cog"></i>Settings</a>
+        <div class="btn-group open">
+            <a class="btn-3"><i class="fa fa-user fa-fw"></i> User</a>
+            <a class="btn-3 btn-primary dropdown-toggle" data-toggle="dropdown">
+                <span class="fa fa-caret-down" title="Toggle dropdown menu"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a><i class="fa fa-pencil fa-fw"></i> Edit</a></li>
+                <li><a><i class="fa fa-trash-o fa-fw"></i> Delete</a></li>
+                <li><a><i class="fa fa-ban fa-fw"></i> Ban</a></li>
+                <li class="divider"></li>
+                <li><a><i class="fa fa-unlock"></i> Make admin</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <footer class="footer col-xs-12">
+        <div class="fixed-action-btn">
+            <a class="btn-floating btn-large primary-color"><i class="fa fa-share"></i></a>
+            <a class="btn-floating btn-danger"><i class="fa fa-twitter"></i></a>
+            <a class="btn-floating " target="_blank"><i class="fa fa-google-plus"></i></a>
+            <a class="btn-floating" target="_blank"><i class="fa fa-linkedin"></i></a>
+            <a class="btn-floating "><i class="fa fa-facebook-official"></i></a>
+            <ul>
+                <li><a href="#" class="btn-floating primary-color" target="_blank"><i
+                            class="fa fa-facebook-official"></i></a></li>
+                <li><a href="#" class="btn-floating primary-color" target="_blank"><i class="fa fa-twitter"></i></a>
+                </li>
+                <li><a href="#" class="btn-floating primary-color" target="_blank"><i class="fa fa-google"></i></a></li>
+                <li><a href="#" class="btn-floating primary-color" target="_blank"><i class="fa fa-linkedin"></i></a>
+                </li>
+                <li><a href="#" class="btn-floating primary-color"><i class="fab fa-whatsapp"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+</div>
