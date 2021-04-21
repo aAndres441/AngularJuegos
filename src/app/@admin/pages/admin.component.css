@@ -5,3 +5,32 @@
     justify-content:center;
     background-color:aquamarine;
   }
+    
+  /* fuente titulo */
+  .font-effect-neon{
+    /* font-size: 3em; */
+    color: #c0dde4;
+  }
+  
+  /* .container1{
+    background: linear-gradient(rgba(182, 180, 180, 0.61),rgb(76, 230, 158)),
+      url('./assets/imagenes/fondo.jpg');
+  }
+  .containe2r{
+     background: #200122;  */ /* fallback for old browsers */
+     /* background: -webkit-linear-gradient(to right, #6f0000, #200122);  */ /* Chrome 10-25, Safari 5.1-6 */
+  /*     background: linear-gradient(to right, #6f0000, #200122); */ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /* } */
+  /* 
+  .container-fluid{     
+   padding-bottom: .5rem;
+  } */
+hr{
+    border-color: #c0dde4;
+    border-width: .3rem;
+    background-color: #75dd20;
+    max-width:80%;
+    margin: 1rem auto ; /* der izq y auto sera arriba y abajo*/
+    opacity: 100%;
+    /* box-shadow: 0,0,22px,-4px violet; */
+   }

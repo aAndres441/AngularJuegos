@@ -6,6 +6,16 @@
             </h1>
         </div>
         <hr>
+            <a [routerLink]="'/public/vista'">
+                <i class="fa fa-location-arrow fa-2x"  style="color:rgb(190, 233, 156)"></i>View
+            </a>
+            <a [routerLink]="'/admin'">
+                <i class="fa fa-reddit-alien fa-2x"  style="color:rgb(190, 233, 156)"></i>Dashboard
+            </a>
+            <a routerLink='/admin/client'>
+                <i class="fa fa-user fa-2x" style="color:rgb(190, 233, 156)"></i>Client
+            </a>
+            
         <router-outlet></router-outlet>
     </div>
 </div>

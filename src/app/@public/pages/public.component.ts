@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PublicComponent implements OnInit {
 
-  title = 'Public';
+  title = 'Online Shop';
   constructor() { }
 
   ngOnInit(): void {

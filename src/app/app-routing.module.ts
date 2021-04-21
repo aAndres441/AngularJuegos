@@ -38,18 +38,7 @@ const myRoutes: Routes = [
    {path: 'myRoutServ', component: DashComponent},
   {path: 'myRoutingLayout', component: LayoComponent},
    
- /* {path:'admin/client', loadChildren:()=>
-    import('./@admin/pages/client/client.module')
-  .then(m=>m.ClientModule)
-}, */
- {path:'contact', loadChildren:()=>
-    import('./@public/pages/contact/contact.module')
-  .then(m=>m.ContactModule)
-},
-{path:'vista', loadChildren:()=>
-  import('./@public/pages/vista/vista.module')
-  .then(m=>m.VistaModule)
-},
+ 
 /* {path:'admin', loadChildren:()=>
   import('./@admin/pages/dashb/dashb.module')
   .then(m=>m.DashbModule)
